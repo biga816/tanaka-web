@@ -1,0 +1,25 @@
+.card-container {
+  margin: -4px;
+
+  .card-inner {
+    padding: 4px;
+  }
+}
+.about-item {
+  max-height: initial!important;
+  // height: 430px;
+  display: table;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .skills {
+    height: 35px;
+  }
+
+  .description {
+    height: 120px;
+  }
+}

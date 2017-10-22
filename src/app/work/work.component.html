@@ -1,0 +1,36 @@
+<mat-toolbar class="page-header dummy"></mat-toolbar>
+<div class="app-container" scroll>
+  <div class="card-container"
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutAlign="start"
+      fxLayoutWrap>
+    <div class="card-inner"
+        fxFlex="100%"
+        fxFlex.lg="25%"
+        fxFlex.md="33.3%"
+        fxFlex.sm="50%"
+        *ngFor="let work of works">
+      <mat-card class="about-item">
+        <img [src]="work.img" alt="歴食">
+        <mat-card-content>
+          <h2 class="title">{{work.name}}</h2>
+          <div class="skills">
+            <mat-chip-list>
+              <mat-chip *ngFor="let skill of work.skills">{{skill}}</mat-chip>
+            </mat-chip-list>      
+          </div>
+          <div class="description">
+            <p>{{work.description}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="openLink(work.url)">
+            More
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

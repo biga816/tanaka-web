@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/styles/common.scss";
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$app-primary: mat-palette($mat-grey);
+$app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+
+// Common style
+html {
+  font-size: $sizeSm;
+}
+
+body {
+  // font-family: 'Open Sans' ,sans-serif;
+  font-weight: 200;
+  line-height: 1.42857143;
+  color: $baseColor;
+  margin: 0;
+}
+
+main {
+  > ng-component {
+    height: 100%;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &.active {
+    > ng-component {
+      height: 100vh;
+
+      &.ng-animating {
+        width: calc(100vw - 200px);
+      }
+    }      
+  }
+}
+
+// header
+.app-toolber {
+  @extend .shadow;
+  // position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // background-color: transparent;
+  background-color: $mainColor;
+  color: white;
+  z-index: 999;
+  transition: all  0.5s ease-in-out;
+
+  .page-name {
+    // color: $baseColor;
+    font-size: $sizeXl;
+    padding-left: 8px;
+  }
+
+  .toolber-spacer {
+    flex: 1 1 auto;
+  }
+}
+
+// main content
+.app-container {
+  // margin-top: 56px;
+  // margin-bottom: 56px;
+  padding: 16px 16px 32px 16px;
+  background-color: white;
+  // overflow: scroll;
+  // height: calc(100vh - 56px);
+}
+
+.page-header {
+  @extend .shadow;
+  // height: 64px;
+  widows: 100%;
+  background-color: $mainColor;
+
+  &.dummy {
+    background-color: white;
+  }
+}

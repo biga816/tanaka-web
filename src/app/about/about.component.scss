@@ -1,0 +1,21 @@
+@import "../../assets/styles/common.scss";
+
+.about-item {
+  display: table;
+}
+
+.profile-image {
+  width: 150px;
+  border-radius: 50%;
+  margin-left: calc(50% - 75px);
+  padding: 16px 0;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.role {
+  margin-top: 0;
+  font-weight: inherit;
+}
