@@ -10,6 +10,12 @@ export class WorkComponent {
   rekishokuUrl:string = 'http://rekishoku.jp/';
   works: Array<any> = WORKS;
 
+  /**
+   * 
+   * 
+   * @param {string} url 
+   * @memberof WorkComponent
+   */
   openLink(url: string) {
     setTimeout(() => {
       window.open(url);

@@ -54,43 +54,14 @@ main {
   }
 }
 
-// header
-.app-toolber {
-  @extend .shadow;
-  // position: absolute;
-  position: fixed;
-  top: 0;
-  left: 0;
-  // background-color: transparent;
-  background-color: $mainColor;
-  color: white;
-  z-index: 999;
-  transition: all  0.5s ease-in-out;
-
-  .page-name {
-    // color: $baseColor;
-    font-size: $sizeXl;
-    padding-left: 8px;
-  }
-
-  .toolber-spacer {
-    flex: 1 1 auto;
-  }
-}
-
 // main content
 .app-container {
-  // margin-top: 56px;
-  // margin-bottom: 56px;
-  padding: 16px 16px 32px 16px;
+  padding: 16px 16px 56px 16px;
   background-color: white;
-  // overflow: scroll;
-  // height: calc(100vh - 56px);
 }
 
 .page-header {
   @extend .shadow;
-  // height: 64px;
   widows: 100%;
   background-color: $mainColor;
 

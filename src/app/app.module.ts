@@ -10,8 +10,6 @@ import { routes } from './app.routes';
 // redux
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { IAppState, rootReducer } from './app.store';
-// import { AppActions } from './app.actions';
-
 
 // modules
 import { SharedModule } from './+shared/shared.module';

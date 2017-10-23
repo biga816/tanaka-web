@@ -31,8 +31,16 @@ export class AppComponent {
   isHome: boolean = true;
   currentUrl: string;
 
+  /**
+   * Creates an instance of AppComponent.
+   * @param {ObservableMedia} media 
+   * @param {Router} router 
+   * @param {NgRedux<IAppState>} ngRedux 
+   * @param {AppActions} actions 
+   * @memberof AppComponent
+   */
   constructor(
-    private media: ObservableMedia ,
+    private media: ObservableMedia,
     private router: Router,
     private ngRedux: NgRedux<IAppState>,
     private actions: AppActions
@@ -44,15 +52,18 @@ export class AppComponent {
         const currentUrl = e.url.slice(1);
 
         this.isHome = (currentUrl === 'home' || currentUrl === '');
-        setTimeout(() => {
-          this.currentUrl = currentUrl;
-        }, 300);
+        this.currentUrl = currentUrl;
       }
     });
 
   }
 
-  ngOnInit() {
+  /**
+   * 
+   * 
+   * @memberof AppComponent
+   */
+  ngOnInit():void {
     let self = this;
 
     this.sidenav.onOpen.subscribe(() => {
@@ -65,19 +76,31 @@ export class AppComponent {
     this.watcher = this.media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : "";
       if ( change.mqAlias == 'lg' || change.mqAlias == 'md') {
-        setTimeout(() => self.sidenav.open(), 300);
+        setTimeout(() => self.sidenav.open(), 100);
       } else {
-        setTimeout(() => self.sidenav.close(), 300);
+        setTimeout(() => self.sidenav.close(), 100);
       }
     });
   }
 
-  getState(outlet: any): void {
+  /**
+   * 
+   * 
+   * @param {*} outlet 
+   * @returns {*} 
+   * @memberof AppComponent
+   */
+  getState(outlet: any): any {
     return outlet ? outlet.activatedRouteData.state : null;
   }
 
-  swipeUp(event: any) {
-    console.log(event);
+  /**
+   * 
+   * 
+   * @param {*} event 
+   * @memberof AppComponent
+   */
+  swipeUp(event: any):void {
     this.ngRedux.dispatch(this.actions.showFooter());
   }
 }

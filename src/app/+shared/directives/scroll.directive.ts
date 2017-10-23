@@ -8,11 +8,23 @@ import { AppActions } from '../../app.actions';
 	selector: "[scroll]" // Attribute selector
 })
 export class ScrollDirective {
-	@HostListener('window:scroll', ['$event'])
+	/**
+   * 
+   * 
+   * @param {any} $event 
+   * @memberof ScrollDirective
+   */
+  @HostListener('window:scroll', ['$event'])
 	onWindowScroll($event) {
 		this.adjustFooter($event);
   }
 
+  /**
+   * 
+   * 
+   * @param {any} $event 
+   * @memberof ScrollDirective
+   */
   @HostListener('click', ['$event'])
 	onClick($event) {
 		this.showFooter();
@@ -20,7 +32,15 @@ export class ScrollDirective {
 
   preScrollTop: number = 0;
 
-	constructor(
+	/**
+   * Creates an instance of ScrollDirective.
+   * @param {Renderer} renderer 
+   * @param {ElementRef} element 
+   * @param {NgRedux<IAppState>} ngRedux 
+   * @param {AppActions} actions 
+   * @memberof ScrollDirective
+   */
+  constructor(
     private renderer: Renderer,
     private element: ElementRef,
     private ngRedux: NgRedux<IAppState>,
@@ -28,12 +48,19 @@ export class ScrollDirective {
   ) {
 	}
 
-	private adjustFooter(event): void {
+	/**
+   * 
+   * 
+   * @private
+   * @param {any} event 
+   * @memberof ScrollDirective
+   */
+  private adjustFooter(event): void {
     const distance = window.pageYOffset - this.preScrollTop;
     
     if (distance <= -15) {
       this.ngRedux.dispatch(this.actions.showFooter());
-    } else if (distance >= 15) {
+    } else if (distance >= 5) {
       this.ngRedux.dispatch(this.actions.hideFooter());
     }
     this.preScrollTop = window.pageYOffset;

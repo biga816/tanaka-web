@@ -15,11 +15,22 @@ export class AboutComponent {
   githubUrl: string = URLS.GITHUB;
   preScrollTop: number = 0;
 
+  /**
+   * Creates an instance of AboutComponent.
+   * @param {Router} router 
+   * @memberof AboutComponent
+   */
   constructor(
     private router: Router
   ) { }
 
-  openLink(url: string) {
+  /**
+   * 
+   * 
+   * @param {string} url 
+   * @memberof AboutComponent
+   */
+  openLink(url: string): void {
     setTimeout(() => {
       window.open(url);
     }, 300);

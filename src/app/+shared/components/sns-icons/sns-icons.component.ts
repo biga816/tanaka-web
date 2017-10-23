@@ -31,7 +31,13 @@ export class SnsIconsComponent {
   githubUrl: string = URLS.GITHUB;
   preScrollTop: number = 0;
 
-  openLink(url: string) {
+  /**
+   * 
+   * 
+   * @param {string} url 
+   * @memberof SnsIconsComponent
+   */
+  openLink(url: string): void {
     setTimeout(() => {
       window.open(url);
     }, 300);

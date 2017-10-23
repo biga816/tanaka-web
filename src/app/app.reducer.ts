@@ -9,6 +9,14 @@ export const INITIAL_STATE: IAppState = {
   footer: true
 };
 
+/**
+ * 
+ * 
+ * @export
+ * @param {IAppState} [state=INITIAL_STATE] 
+ * @param {Action} action 
+ * @returns {IAppState} 
+ */
 export function appReducer(state: IAppState = INITIAL_STATE, action: Action): IAppState {
   switch (action.type) {
     case AppActions.SHOW_FOOTER: {
