@@ -19,6 +19,7 @@ import { BlogEpics } from './blog/blog.epics';
 
 // modules
 import { SharedModule } from './+shared/shared.module';
+import { HomeModule } from './home/home.module';
 import { BlogModule } from './blog/blog.module';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { BlogModule } from './blog/blog.module';
     HttpClientModule,
     NgReduxModule,
     SharedModule,
+    HomeModule,
     BlogModule,
   ],
   providers: [
