@@ -1,4 +1,4 @@
-@import "../../assets/styles/common.scss";
+@import "../../../assets/styles/common.scss";
 
 :host /deep/ {
   .post-item {
@@ -59,9 +59,12 @@
   bottom: 0;
   text-align: left;
   white-space: normal;
-  height: 32px;
+  height: 40px;
   overflow: hidden;
-  margin-bottom: 8px;
+
+  mat-chip {
+    margin-bottom: 8px;
+  }
 }
 
 

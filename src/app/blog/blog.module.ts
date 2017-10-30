@@ -9,7 +9,8 @@ import { BlogService } from './blog.service';
 
 // routes & components
 import { routes } from './blog.routes';
-import { BlogComponent } from './blog.component';
+import { BlogTopComponent } from './blog-top/blog-top.component';
+import { BlogDialogComponent } from './blog-dialog/blog-dialog.component';
 
 // shared
 import { SharedModule } from '../+shared/shared.module';
@@ -26,7 +27,11 @@ import { SharedModule } from '../+shared/shared.module';
     BlogService
   ],
   declarations: [
-    BlogComponent
+    BlogTopComponent,
+    BlogDialogComponent
+  ],
+  entryComponents: [
+    BlogDialogComponent
   ]
 })
 export class BlogModule { }

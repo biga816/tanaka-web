@@ -1,0 +1,75 @@
+@import "../../../assets/styles/common.scss";
+
+// .fixed-header {
+//   background-color: transparent;
+// }
+
+.dialog-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .dialog-content {
+    padding: 0;
+    overflow: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .iframe-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background-color: $mainColor;
+}
+
+:host /deep/ {
+  .list-spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    mat-spinner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top:0;
+      bottom: 0;
+      margin: auto;  
+      width: 100%!important;
+      // height: 44px!important;
+    
+      svg {
+        height: 100%!important;
+        width: auto!important;
+      }
+    }
+  }
+}
+
+/**
+ * lt-md
+ */
+ @media screen and (max-width: 959px){
+  .close-button {
+    bottom: 16px;
+    right: 8px;
+  }
+}
+  

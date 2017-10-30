@@ -2,12 +2,12 @@
 import { Routes } from '@angular/router';
 
 // components
-import { BlogComponent } from './blog.component';
+import { BlogTopComponent } from './blog-top/blog-top.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: BlogComponent,
+    component: BlogTopComponent,
     pathMatch: 'full',
     data: {
       state: 'blog'

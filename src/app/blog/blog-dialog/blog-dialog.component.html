@@ -1,0 +1,14 @@
+<div class="dialog-inner">
+  <button class="close-button" mat-fab>
+    <mat-icon (click)="close()">close</mat-icon>
+  </button>
+
+  <div class="list-spinner"><mat-spinner></mat-spinner></div>
+
+  <div class="dialog-content">
+    <div class="iframe-content">
+      <iframe frameborder="0" [src]="sanitizer.bypassSecurityTrustResourceUrl(targetLink)" scrolling="auto"></iframe>
+    </div>
+  </div>
+</div>
+  

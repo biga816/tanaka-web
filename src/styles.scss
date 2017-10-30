@@ -54,9 +54,17 @@ main {
   }
 }
 
+// header
+header {
+  .toolber-spacer {
+    flex: 1 1 auto;
+  }
+}
+
+
 // main content
 .app-container {
-  padding: 16px 16px 56px 16px;
+  padding: 16px 8px 56px 8px;
   background-color: white;
 }
 
@@ -67,5 +75,30 @@ main {
 
   &.dummy {
     background-color: white;
+  }
+}
+
+// dialog
+.rs-full-screen-dialog .mat-dialog-container {
+  max-width: none;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 80px);
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.dialog-content {
+  padding: 0 12px;
+}
+
+
+/**
+ * lt-md
+ */
+ @media screen and (max-width: 959px){
+  // dialog
+  .rs-full-screen-dialog .mat-dialog-container {
+    width: calc(100vw - 10px);
+    height: calc(100vh - 60px);
   }
 }

@@ -1,5 +1,6 @@
 module.exports = [
   '/home',
   '/about',
-  '/work'
+  '/work',
+  '/blog'
 ];

@@ -3,20 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
 import { NgRedux, select } from '@angular-redux/store';
-import { IBlogState } from './blog.reducer';
-import { BlogActions } from './blog.actions';
+import { IBlogState } from '../blog.reducer';
+import { BlogActions } from '../blog.actions';
+
+import { BlogDialogComponent } from '../blog-dialog/blog-dialog.component';
 
 // shared
-import { PostModel } from '../+shared/models/post.model';
+import { PostModel } from '../../+shared/models/post.model';
 
 // libs
+import { MatDialog } from '@angular/material';
 import * as format from 'date-fns/format';
 
 @Component({
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
+  templateUrl: './blog-top.component.html',
+  styleUrls: ['./blog-top.component.scss'],
 })
-export class BlogComponent implements OnInit {
+export class BlogTopComponent implements OnInit {
   @select(['blog', 'posts']) readonly posts$: Observable<any>;
 
   public postsSub: Subscription;
@@ -24,7 +27,8 @@ export class BlogComponent implements OnInit {
 
   constructor(
     private ngRedux: NgRedux<IBlogState>,
-    private actions: BlogActions
+    private actions: BlogActions,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -44,4 +48,10 @@ export class BlogComponent implements OnInit {
     return format(date, 'YYYY/MM/DD');
   }
 
+  openDialog(link: string): void {
+    this.dialog.open(BlogDialogComponent, {
+      panelClass: 'rs-full-screen-dialog',
+      data: { link },
+    });
+  }
 }
