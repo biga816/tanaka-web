@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 
 import { AppActions } from '../app.actions';
 
-// Directives
+// directives
 import { ScrollDirective } from './directives/scroll.directive';
 
-// Components
+// components
 import { SnsIconsComponent } from './components/sns-icons/sns-icons.component';
+
+// services
+import { ApiService } from './services/api.service';
 
 // libs
 import {
@@ -40,9 +43,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatChipsModule,
     FlexLayoutModule,
   ],
-  providers: [AppActions],
+  providers: [
+    AppActions,
+    ApiService
+  ],
   exports: [
-    // Modules
+    // libs
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
@@ -56,9 +62,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatChipsModule,
     FlexLayoutModule,
-    // Directives
+    // directives
     ScrollDirective,
-    // Components
+    // components
     SnsIconsComponent
   ]
 })

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  wpUrl: 'http://blog.tanakas.org/wp-json/wp/v2/'
 };

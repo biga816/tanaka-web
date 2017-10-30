@@ -9,6 +9,7 @@
       <a mat-list-item routerLink="/home">Home</a>
       <a mat-list-item routerLink="/about">About</a>
       <a mat-list-item routerLink="/work">Work</a>
+      <a mat-list-item routerLink="/blog">Blog</a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -48,7 +49,7 @@
             [routerLink]="'/about'"
             routerLinkActive #rla2="routerLinkActive"
             [active]="rla2.isActive">
-          <mat-icon>library_books</mat-icon>
+          <mat-icon>person</mat-icon>
         </a>
         <!-- Work -->
         <a mat-tab-link
@@ -57,7 +58,14 @@
             [active]="rla3.isActive">
           <mat-icon>work</mat-icon>
         </a>
-  
+        <!-- Blog -->
+        <a mat-tab-link
+        [routerLink]="'/blog'"
+        routerLinkActive #rla4="routerLinkActive"
+        [active]="rla4.isActive">
+      <mat-icon>library_books</mat-icon>
+    </a>
+
       </nav>
     </mat-toolbar>
   </footer>

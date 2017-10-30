@@ -1,0 +1,80 @@
+@import "../../assets/styles/common.scss";
+
+:host /deep/ {
+  .post-item {
+    height: auto!important;
+    padding: 0 8px!important;
+    margin-bottom: 1px;
+    width: 100%;
+    line-height: initial;
+  
+    .mat-button-wrapper {
+      display: flex;
+    }
+  }  
+}
+
+.main-img {
+  flex: 1;
+  max-width: 240px;
+  height: 135px;
+  border-radius: 0;
+  display: grid;
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin-left: -8px;
+    object-fit: cover;
+  }
+}
+
+.description {
+  flex: 1;
+  text-align: left;
+  position: relative;
+
+  .date {
+    font-size: $sizeSm;
+    line-height: $sizeXl;
+    color: $gray;
+    font-weight: 400;
+  }
+
+  .post-title {
+    font-size: $sizeMd;
+    line-height: $sizeMd;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    white-space: normal;  
+  }
+}
+
+.tags {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: left;
+  white-space: normal;
+  height: 32px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+
+:host /deep/ {
+  .list-spinner {
+    mat-spinner {
+      width: 100%!important;
+      // height: 44px!important;
+    
+      svg {
+        height: 100%!important;
+        width: auto!important;
+      }
+    }
+  }
+}
