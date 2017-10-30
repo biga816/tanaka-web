@@ -1,6 +1,6 @@
 <mat-toolbar class="page-header dummy"></mat-toolbar>
 <div class="app-container" scroll>
-  <div class="list-spinner" *ngIf="!(posts$ | async)?.length > 0"><mat-spinner></mat-spinner></div>
+  <div class="list-spinner" *ngIf="(posts$ | async)?.length < 1"><mat-spinner></mat-spinner></div>
   <button mat-button
       class="post-item"
       *ngFor="let post of posts$ | async;"
