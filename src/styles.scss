@@ -85,8 +85,6 @@ header {
 // dialog
 .rs-full-screen-dialog .mat-dialog-container {
   max-width: none;
-  // width: calc(100vw - 40px);
-  // height: calc(100vh - 80px);
   padding: 0px;
   border-radius: 8px;
   position: absolute;
@@ -119,12 +117,6 @@ header {
  @media screen and (max-width: 959px){
   // dialog
   .rs-full-screen-dialog .mat-dialog-container {
-    // width: calc(100vw - 10px);
-    // height: calc(100vh - 60px);
-    // top: 10px;
-    // bottom: 10px;  
-    // left: 10px;
-    // right: 10px;
     top: 0px;
     bottom: 0px;
     left: 0px;
