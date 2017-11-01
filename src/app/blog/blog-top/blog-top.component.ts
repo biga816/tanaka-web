@@ -44,7 +44,7 @@ export class BlogTopComponent implements OnInit {
     });
   }
 
-  getDateFormat(date) {
+  getDateFormat(date: string): string {
     return format(date, 'YYYY/MM/DD');
   }
 

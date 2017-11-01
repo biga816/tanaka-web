@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ElementRef } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -12,14 +12,16 @@ import * as format from 'date-fns/format';
   styleUrls: ['./blog-dialog.component.scss']
 })
 export class BlogDialogComponent {
+  @ViewChild('cont') contEl: any;
+
   public targetLink: string;
   public post: PostModel;
+  public isFullScreeem: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<BlogDialogComponent>,
     public sanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private eltRef:ElementRef
   ) {
     this.post = this.data.post;
   }
@@ -30,5 +32,15 @@ export class BlogDialogComponent {
 
   getDateFormat(date) {
     return format(date, 'YYYY/MM/DD');
+  }
+
+  scroll(event: any): void {
+    this.isFullScreeem = (this.contEl.nativeElement.scrollTop > 32);
+  }
+
+  showBlog(link: string): void {
+    setTimeout(() => {
+      window.open(link);
+    }, 300);
   }
 }

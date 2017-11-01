@@ -88,7 +88,7 @@ header {
   // width: calc(100vw - 40px);
   // height: calc(100vh - 80px);
   padding: 0px;
-  border-radius: 4px;
+  border-radius: 8px;
   position: absolute;
   top: 40px;
   bottom: 40px;
@@ -106,6 +106,12 @@ header {
   padding: 0 12px;
 }
 
+.wordpress-post {
+  h1, h2, h3, h4, h5 {
+    padding-top: 32px;
+  }
+}
+
 
 /**
  * lt-md
@@ -115,9 +121,15 @@ header {
   .rs-full-screen-dialog .mat-dialog-container {
     // width: calc(100vw - 10px);
     // height: calc(100vh - 60px);
-    top: 5px;
-    bottom: 5px;  
-    left: 5px;
-    right: 5px;  
+    // top: 10px;
+    // bottom: 10px;  
+    // left: 10px;
+    // right: 10px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: transparent;
+    border-radius: 0;
   }
 }
