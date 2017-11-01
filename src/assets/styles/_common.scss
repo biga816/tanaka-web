@@ -11,6 +11,19 @@ $sizeMd: 16px;
 $sizeSm: 14px;
 $sizeXs: 12px;
 
+// extends
 .shadow {
   box-shadow: 1px 1px 6px 1px  rgba(0,0,0,0.4);
+}
+
+.content-inner {
+  padding: 0 8px 0 8px;
+}
+
+.padding-top {
+  padding-top: 32px;
+}
+
+.padding-bottom {
+  padding-bottom: 32px;
 }

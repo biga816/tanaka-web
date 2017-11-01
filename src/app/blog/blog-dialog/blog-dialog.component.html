@@ -2,12 +2,29 @@
   <button class="close-button" mat-fab>
     <mat-icon (click)="close()">close</mat-icon>
   </button>
-
-  <div class="list-spinner"><mat-spinner></mat-spinner></div>
-
+  
   <div class="dialog-content">
-    <div class="iframe-content">
-      <iframe frameborder="0" [src]="sanitizer.bypassSecurityTrustResourceUrl(targetLink)" scrolling="auto"></iframe>
+    <div class="top-image">
+      <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.medium?.sourceUrl" [fxShow]="false" [fxShow.xs]="true" />
+      <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.mediumLarge?.sourceUrl" [fxShow]="false" [fxShow.sm]="true" />
+      <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.large?.sourceUrl" [fxShow]="false" [fxShow.gt-sm]="true" />
+    </div>
+    
+    <div class="main-content">
+      <div fxFlexOffset.md="10%" fxFlexOffset.lg="15%" fxFlex.md="80%" fxFlex.lg="70%">
+          <div class="post-info">
+            <div class="date">{{ getDateFormat(post?.date) }}</div>
+            <div class="post-title">{{ post?.title?.rendered }}</div>
+            <div class="tags">
+              <mat-chip-list>
+                <mat-chip *ngFor="let category of post?.info?.team[0]">{{category.name}}</mat-chip>
+                <mat-chip *ngFor="let tag of post?.info?.team[1]" color="accent" selected="true">{{tag.name}}</mat-chip>
+              </mat-chip-list>
+            </div>  
+          </div>
+        
+          <div class="description" [innerHTML]="post?.content?.rendered" highlight></div>
+        </div>
     </div>
   </div>
 </div>

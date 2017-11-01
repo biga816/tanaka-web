@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./assets/styles/common.scss";
+
+// @import '~highlight.js/styles/dark.css';
+// @import '~highlight.js/styles/atelier-estuary-dark.css';
+@import '~highlight.js/styles/atom-one-dark.css';
 @import '~@angular/material/theming';
 @include mat-core();
 
@@ -81,10 +85,21 @@ header {
 // dialog
 .rs-full-screen-dialog .mat-dialog-container {
   max-width: none;
-  width: calc(100vw - 40px);
-  height: calc(100vh - 80px);
+  // width: calc(100vw - 40px);
+  // height: calc(100vh - 80px);
   padding: 0px;
   border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 80px;
+  right: 80px;
+  width: auto;
+  height: auto;
+
+  img {
+    width: 100%;
+  }
 }
 
 .dialog-content {
@@ -98,7 +113,11 @@ header {
  @media screen and (max-width: 959px){
   // dialog
   .rs-full-screen-dialog .mat-dialog-container {
-    width: calc(100vw - 10px);
-    height: calc(100vh - 60px);
+    // width: calc(100vw - 10px);
+    // height: calc(100vh - 60px);
+    top: 5px;
+    bottom: 5px;  
+    left: 5px;
+    right: 5px;  
   }
 }

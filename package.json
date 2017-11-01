@@ -49,6 +49,7 @@
     "date-fns": "^1.29.0",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+    "highlight.js": "^9.12.0",
     "redux": "^3.7.2",
     "redux-observable": "^0.14.1",
     "redux-observable-decorator": "^1.1.0",

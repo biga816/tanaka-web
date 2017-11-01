@@ -6,6 +6,7 @@ import { AppActions } from '../app.actions';
 
 // directives
 import { ScrollDirective } from './directives/scroll.directive';
+import { HighlightDirective } from './directives/highlight.directive';
 
 // components
 import { SnsIconsComponent } from './components/sns-icons/sns-icons.component';
@@ -23,8 +24,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
+    // directives
     ScrollDirective,
-    SnsIconsComponent
+    HighlightDirective,
+    // components
+    SnsIconsComponent,
   ],
   entryComponents: [],
   imports: [
@@ -64,8 +68,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     // directives
     ScrollDirective,
+    HighlightDirective,
     // components
-    SnsIconsComponent
+    SnsIconsComponent,
   ]
 })
 export class SharedModule {

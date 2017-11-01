@@ -48,10 +48,10 @@ export class BlogTopComponent implements OnInit {
     return format(date, 'YYYY/MM/DD');
   }
 
-  openDialog(link: string): void {
+  openDialog(post: PostModel): void {
     this.dialog.open(BlogDialogComponent, {
       panelClass: 'rs-full-screen-dialog',
-      data: { link },
+      data: { post },
     });
   }
 }
