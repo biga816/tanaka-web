@@ -1,8 +1,8 @@
-<div class="dialog-inner" [ngClass]="{'scrolled': isFullScreeem}"> 
-  <button class="close-button" mat-fab>
+<button class="close-button" mat-fab>
     <mat-icon (click)="close()">close</mat-icon>
-  </button>
-  
+</button>
+
+<div class="dialog-inner" [ngClass]="{'scrolled': isFullScreeem}">   
   <div class="dialog-content" #cont (scroll)="scroll($event)">
     <div class="top-image">
       <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.medium?.sourceUrl" [fxShow]="false" [fxShow.xs]="true" />
@@ -24,10 +24,11 @@
         </div>
       
         <div class="description wordpress-post" [innerHTML]="post?.content?.rendered" highlight></div>
+
+        <div class="footer-content">
+          <button mat-raised-button color="accent" (click)="showBlog(post?.link)">オリジナルページで読む</button>
+        </div>      
       </div>
-    </div>
-    <div class="footer-content">
-      <button mat-raised-button color="accent" (click)="showBlog(post?.link)">オリジナルページで読む</button>
     </div>
   </div>
 </div>
