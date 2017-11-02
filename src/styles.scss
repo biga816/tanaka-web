@@ -97,6 +97,7 @@ header {
 
   img {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -107,6 +108,19 @@ header {
 .wordpress-post {
   h1, h2, h3, h4, h5 {
     padding-top: 32px;
+  }
+
+  em code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: $baseColor;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  a {
+    color: $mainColor;
+    text-decoration: none;
   }
 }
 
