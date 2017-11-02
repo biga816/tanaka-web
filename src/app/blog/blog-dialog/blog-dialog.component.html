@@ -1,5 +1,5 @@
-<button class="close-button" mat-fab>
-    <mat-icon (click)="close()">close</mat-icon>
+<button class="close-button" mat-fab (click)="close()">
+    <mat-icon>close</mat-icon>
 </button>
 
 <div class="dialog-inner" [ngClass]="{'scrolled': isFullScreeem}">   

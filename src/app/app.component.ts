@@ -30,6 +30,7 @@ export class AppComponent {
   isOpen: boolean = false;
   isHome: boolean = true;
   currentUrl: string;
+  copyright: string = "©️2017-"+ new Date().getFullYear() + " Akihiro Tanaka";
 
   /**
    * Creates an instance of AppComponent.

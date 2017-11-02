@@ -58,9 +58,9 @@ export class ScrollDirective {
   private adjustFooter(event): void {
     const distance = window.pageYOffset - this.preScrollTop;
     
-    if (distance <= -15) {
+    if (distance <= -10) {
       this.ngRedux.dispatch(this.actions.showFooter());
-    } else if (distance >= 5) {
+    } else if (distance >= 25) {
       this.ngRedux.dispatch(this.actions.hideFooter());
     }
     this.preScrollTop = window.pageYOffset;

@@ -17,6 +17,7 @@
 .main-img {
   flex: 1;
   max-width: 240px;
+  min-width: 135px;
   height: 135px;
   border-radius: 0;
   display: grid;
@@ -30,7 +31,7 @@
 }
 
 .description {
-  flex: 1;
+  flex: 2;
   text-align: left;
   position: relative;
 

@@ -66,18 +66,16 @@
   .dialog-inner {
     transition: all 400ms;
     transform: scale(0.95);
+    overflow: hidden;
+    border-radius: 8px;
 
     .dialog-content {
       background-color: white;
-      border-radius: 8px;
     }
 
     &.scrolled {
       transform: scale(1);
-
-      .dialog-content {
-        border-radius: 0;
-      }
+      border-radius: 0;
     }
   }
   
