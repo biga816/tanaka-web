@@ -26,8 +26,8 @@
         <div class="description wordpress-post" [innerHTML]="post?.content?.rendered" highlight></div>
 
         <div class="footer-content">
-          <button mat-raised-button color="accent" (click)="showBlog(post?.link)">オリジナルページで読む</button>
-        </div>      
+          <a mat-raised-button color="accent" [href]="post?.link" target="_blank">オリジナルページで読む</a>
+        </div>
       </div>
     </div>
   </div>

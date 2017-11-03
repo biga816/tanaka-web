@@ -37,10 +37,4 @@ export class BlogDialogComponent {
   scroll(event: any): void {
     this.isFullScreeem = (this.contEl.nativeElement.scrollTop > 32);
   }
-
-  showBlog(link: string): void {
-    setTimeout(() => {
-      window.open(link);
-    }, 300);
-  }
 }
