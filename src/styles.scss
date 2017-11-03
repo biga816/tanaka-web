@@ -94,11 +94,6 @@ header {
   right: 80px;
   width: auto;
   height: auto;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .dialog-content {
@@ -106,7 +101,7 @@ header {
 }
 
 .wordpress-post {
-  h1, h2, h3, h4, h5 {
+  h1, h2 {
     padding-top: 32px;
   }
 
@@ -121,6 +116,16 @@ header {
   a {
     color: $mainColor;
     text-decoration: none;
+    word-break: break-all;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul {
+    -webkit-padding-start: 20px;
   }
 }
 
