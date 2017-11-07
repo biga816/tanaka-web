@@ -17,10 +17,10 @@
   </button>
 </div>
 
-<div class="app-container" scroll [@listAnimation]="(posts$ | async).length">
+<div class="app-container" scroll [@listAnimation]="posts.length">
   <button mat-button
       class="post-item"
-      *ngFor="let post of posts$ | async;"
+      *ngFor="let post of posts;"
       (click)="openDialog(post)">
     <div class="main-img">
       <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.medium?.sourceUrl" [fxShow]="false" [fxShow.xs]="true" />

@@ -45,6 +45,10 @@ export class BlogTopComponent implements OnInit {
       if (!posts || posts.length == 0) {
         this.ngRedux.dispatch(this.actions.featchPosts(this.page, true));
       }
+
+      setTimeout(() => {
+        this.posts = posts;
+      }, 100);
       // this.scroll.complete();
       // if (this.page >= 2 && this.page * API.SETTING.PER > stories.length) {
       //   this.scroll.enable(false);
