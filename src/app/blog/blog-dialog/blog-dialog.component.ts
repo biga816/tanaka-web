@@ -4,6 +4,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 // shared
 import { PostModel } from '../../+shared/models/post.model';
+
+// libs
 import * as format from 'date-fns/format';
 
 @Component({

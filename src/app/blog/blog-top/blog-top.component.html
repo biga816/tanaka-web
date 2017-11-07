@@ -1,6 +1,23 @@
 <mat-toolbar class="page-header dummy"></mat-toolbar>
-<div class="app-container" scroll>
-  <div class="list-spinner" *ngIf="(posts$ | async)?.length < 1"><mat-spinner></mat-spinner></div>
+
+<div class="app-container" *ngIf="(posts$ | async)?.length < 1">
+  <button mat-button class="post-item" *ngFor="let dummy of dummies;">
+    <div class="main-img">
+      <div class="dummy-image"></div>
+    </div>
+    <div class="description">
+      <div class="date">
+        <div class="dummy-line"></div>
+        <div class="dummy-line"></div>
+      </div>
+      <div class="post-title">
+        <div class="dummy-line short"></div>
+      </div>
+    </div>
+  </button>
+</div>
+
+<div class="app-container" scroll [@listAnimation]="(posts$ | async).length">
   <button mat-button
       class="post-item"
       *ngFor="let post of posts$ | async;"

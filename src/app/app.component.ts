@@ -77,7 +77,7 @@ export class AppComponent {
     this.watcher = this.media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : "";
       if ( change.mqAlias == 'lg' || change.mqAlias == 'md') {
-        setTimeout(() => self.sidenav.open(), 100);
+        setTimeout(() => self.sidenav.open(), 500);
       } else {
         setTimeout(() => self.sidenav.close(), 100);
       }

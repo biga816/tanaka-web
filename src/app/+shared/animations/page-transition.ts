@@ -1,4 +1,4 @@
-import { animate, group, query, stagger, state, style , transition,  trigger } from '@angular/animations';
+import { animate, group, query, stagger, state, style , transition,  trigger, animateChild } from '@angular/animations';
 
 export const routerTransition = trigger('routerTransition', [
   transition('* <=> *', [
@@ -11,7 +11,7 @@ export const routerTransition = trigger('routerTransition', [
       { optional: true }),
     // move page off screen right on leave
     query(':leave',
-      animate('400ms ease-in-out',
+      animate('200ms ease-in-out',
         style({
           position: 'fixed',
           opacity: 0,
@@ -20,7 +20,7 @@ export const routerTransition = trigger('routerTransition', [
       { optional: true }),
     // move page in screen from left to right
     query(':enter',
-      animate('400ms ease-in-out',
+      animate('200ms ease-in-out',
         style({
           opacity: 1
         })
@@ -28,3 +28,21 @@ export const routerTransition = trigger('routerTransition', [
       { optional: true })
   ])
 ]);
+
+export const listAnimation = 
+  trigger('listAnimation', [
+    transition('* => *', [ // each time the binding value changes
+      query(':leave', [
+        stagger(100, [
+          animate('0.3s ease-out', style({ opacity: 0, transform: 'translateY(30px)'}))
+        ])
+      ], { optional: true }),
+      query(':enter', [
+        style({ opacity: 0, transform: 'translateY(30px)' }),
+        stagger(100, [
+          animate('0.3s ease-out', style({ opacity: 1, transform: 'translateY(0)'}))
+        ])
+      ], { optional: true })
+    ])
+  ])
+;
