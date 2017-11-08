@@ -9,6 +9,10 @@
   background-position: center center;
   background-size: cover;
 
+  &.slide2 {
+    background-image: url('/assets/img/top_bk2.png');
+  }
+
   .background {
     height: 100%;
     width: 100%;
@@ -24,6 +28,17 @@
     right: 0;
     width: 300px;
     height: auto;
+    color: white;
+
+    &.tanaka-button {
+      height: 80px;
+      text-align: center;
+
+      > a {
+        @extend .noto-thin;
+        font-size: $sizeXXl;
+      }
+    }
   }
 
   .shadow {
@@ -41,6 +56,14 @@
   .top-image {
     .logo {
       width: 200px;
+
+      &.tanaka-button {
+        height: 40px;
+
+        > a {
+          font-size: $sizeXl;
+        }
+      }
     }
   }
 }

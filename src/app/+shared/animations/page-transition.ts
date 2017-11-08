@@ -32,6 +32,9 @@ export const routerTransition = trigger('routerTransition', [
 export const listAnimation = 
   trigger('listAnimation', [
     transition('* => *', [ // each time the binding value changes
+      // Initial state of new route
+      query(':enter',
+        style({ opacity: 0 }), { optional: true }),
       query(':leave', [
         stagger(100, [
           animate('0.3s ease-out', style({ opacity: 0, transform: 'translateY(30px)'}))

@@ -121,6 +121,7 @@
     text-align: center;
   }
 }
+
 :host /deep/ {
   .mat-sidenav-container, .mat-sidenav-content {
     position: initial;
@@ -181,21 +182,6 @@
 
   &.active {
     span {
-      // // arrow
-      // &:nth-of-type(1), &:nth-of-type(3) {
-      //   width: 20px;
-      // }
-
-      // &:nth-of-type(1) {
-      //   -webkit-transform: translate(-2px,3px) rotate(-45deg);
-      //   transform: translate(-2px,3px) rotate(-45deg);        
-      // }
-
-      // &:nth-of-type(3) {
-      //   -webkit-transform: translate(-2px,-3px) rotate(45deg);
-      //   transform: translate(-2px,-3px) rotate(45deg);
-      // }
-
       &:nth-of-type(1) {
         transform: translateY(9px) rotate(-45deg);
       }
@@ -208,7 +194,6 @@
     }
   }
 }
-
 
 /**
  * lt-md
@@ -225,4 +210,3 @@
     }
   }
 }
-  

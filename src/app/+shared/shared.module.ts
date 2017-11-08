@@ -10,6 +10,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 
 // components
 import { SnsIconsComponent } from './components/sns-icons/sns-icons.component';
+import { SwiperContainer, SwiperSlide } from './components/swiper/swiper.component';
 
 // services
 import { ApiService } from './services/api.service';
@@ -29,6 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HighlightDirective,
     // components
     SnsIconsComponent,
+    SwiperContainer,
+    SwiperSlide
   ],
   entryComponents: [],
   imports: [
@@ -71,6 +74,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HighlightDirective,
     // components
     SnsIconsComponent,
+    SwiperContainer,
+    SwiperSlide
   ]
 })
 export class SharedModule {

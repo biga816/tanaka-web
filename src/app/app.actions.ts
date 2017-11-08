@@ -5,6 +5,8 @@ import { Action } from 'redux';
 export class AppActions {
   static SHOW_FOOTER = 'SHOW_FOOTER';
   static HIDE_FOOTER = 'HIDE_FOOTER';
+  static OPEN_SIDENAV = 'OPEN_SIDENAV';
+  static CLOSE_SIDENAV = 'CLOSE_SIDENAV';
 
   /**
    * Creates an instance of AppActions.
@@ -36,6 +38,17 @@ export class AppActions {
     return {
       type: AppActions.HIDE_FOOTER
     };
+  }
 
+  openSidenav(): Action {
+    return {
+      type: AppActions.OPEN_SIDENAV
+    };
+  }
+
+  closeSidenav(): Action {
+    return {
+      type: AppActions.CLOSE_SIDENAV
+    };
   }
 }

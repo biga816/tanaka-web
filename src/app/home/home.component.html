@@ -1,4 +1,16 @@
-<div class="top-image" scroll>
-  <div class="shadow"></div>
-  <img class="logo" src="./assets/img/logo-white.png" alt="logo">
-</div>
+<swiper-container [options]="swipeOptions" #topSwiper>
+  <swiper-slide>
+    <div class="top-image" scroll>
+      <div class="shadow"></div>
+      <img class="logo" src="./assets/img/logo-white.png" alt="logo">
+    </div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="top-image slide2" scroll>
+      <div class="shadow"></div>
+      <div class="logo tanaka-button">
+          <a mat-button href="https://www.google.co.jp/search?q=名字　改名　田中" target="_blank">TO BE TANAKA..</a>
+      </div>
+    </div>
+  </swiper-slide>
+</swiper-container>

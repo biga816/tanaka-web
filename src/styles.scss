@@ -25,6 +25,17 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // that you are using.
 @include angular-material-theme($app-theme);
 
+// fonts
+@font-face {
+  font-family: 'Noto';
+  src: url('./assets/fonts/NotoSansMonoCJKjp-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto-Thin';
+  src: url('./assets/fonts/NotoSansCJKjp-Thin.otf') format('truetype');
+}
+
 
 // Common style
 html {
@@ -33,6 +44,7 @@ html {
 
 body {
   // font-family: 'Open Sans' ,sans-serif;
+  font-family: 'Noto';
   font-weight: 200;
   line-height: 1.42857143;
   color: $baseColor;
@@ -142,5 +154,33 @@ header {
     right: 0px;
     background-color: transparent;
     border-radius: 0;
+  }
+}
+
+/**
+ * swiper
+ */
+.swiper-container {
+  background-color: $baseColor;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 0.7;
+  background: $mainColor;
+}
+
+swiper-slide {
+  width: 100%!important;
+}
+
+@media screen and (max-width: 959px){
+  .swiper-pagination-bullets {
+    bottom: 66px!important;
   }
 }

@@ -36,6 +36,7 @@
   position: relative;
 
   .date {
+    @extend .noto-thin;
     font-size: $sizeSm;
     line-height: $sizeXl;
     color: $gray;
@@ -43,6 +44,8 @@
   }
 
   .post-title {
+    @extend .noto;
+
     font-size: $sizeMd;
     line-height: $sizeMd;
     display: -webkit-box;
@@ -54,6 +57,7 @@
 }
 
 .tags {
+  @extend .noto;
   position: absolute;
   width: 100%;
   left: 0;

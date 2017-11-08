@@ -23,14 +23,17 @@ import { routerTransition } from './+shared/animations/page-transition';
 export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
   @select(['app', 'footer']) readonly footer$: Observable<any>;
+  @select(['app', 'sidenav']) readonly sidenav$: Observable<any>;
 
-  watcher: Subscription;
-  routerEventSub: Subscription;
-  activeMediaQuery: any = "";
-  isOpen: boolean = false;
-  isHome: boolean = true;
-  currentUrl: string;
-  copyright: string = "©️2017-"+ new Date().getFullYear() + " Akihiro Tanaka";
+  public watcher: Subscription;
+  public routerEventSub: Subscription;
+  public sidenavSub: Subscription;
+
+  public activeMediaQuery: any = "";
+  public isHome: boolean = true;
+  public isOpen: boolean = false;
+  public currentUrl: string;
+  public copyright: string = "©️2017-"+ new Date().getFullYear() + " Akihiro Tanaka";
 
   /**
    * Creates an instance of AppComponent.
@@ -57,6 +60,10 @@ export class AppComponent {
       }
     });
 
+    this.sidenavSub = this.sidenav$.subscribe((sidenav: boolean) => {
+      this.isOpen = sidenav;
+    });
+
   }
 
   /**
@@ -68,10 +75,10 @@ export class AppComponent {
     let self = this;
 
     this.sidenav.onOpen.subscribe(() => {
-      this.isOpen = true;
+      this.ngRedux.dispatch(this.actions.openSidenav());
     });
     this.sidenav.onClose.subscribe(() => {
-      this.isOpen = false;
+      this.ngRedux.dispatch(this.actions.closeSidenav());
     });
 
     this.watcher = this.media.subscribe((change: MediaChange) => {
@@ -82,6 +89,12 @@ export class AppComponent {
         setTimeout(() => self.sidenav.close(), 100);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.routerEventSub.unsubscribe();
+    this.sidenavSub.unsubscribe();
+    this.watcher.unsubscribe();
   }
 
   /**
@@ -103,5 +116,9 @@ export class AppComponent {
    */
   swipeUp(event: any):void {
     this.ngRedux.dispatch(this.actions.showFooter());
+  }
+
+  toggelSidnav(isOpen: boolean) {
+    this.sidenav.toggle();
   }
 }

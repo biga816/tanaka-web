@@ -20,6 +20,7 @@
         "prefix": "app",
         "styles": [
           "../node_modules/font-awesome/css/font-awesome.css",
+          "../node_modules/swiper/dist/css/swiper.css",
           "styles.scss"
         ],
         "scripts": [],
@@ -45,6 +46,7 @@
         "prefix": "app",
         "styles": [
           "../node_modules/font-awesome/css/font-awesome.css",
+          "../node_modules/swiper/dist/css/swiper.css",
           "styles.scss"
         ],
         "scripts": [],

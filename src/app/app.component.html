@@ -18,7 +18,7 @@
     <mat-toolbar class="app-toolber" [ngClass]="{'home-tooler': isHome}">
       <a class="menu-trigger"
           [ngClass]="{'active': isOpen}"
-          (click)="sidenav.toggle()"
+          (click)="toggelSidnav(isOpen)"
           [fxShow]="false"
           [fxShow.gt-sm]="true">
         <span></span>
@@ -34,8 +34,8 @@
   </header>
 
   <footer
-      [fxShow]="true"
-      [fxShow.gt-sm]="false">
+      [fxShow]="false"
+      [fxShow.lt-md]="true">
     <mat-toolbar class="app-footer fixed-footer" [ngClass]="{'hide': !(footer$ | async)}">
       <nav mat-tab-nav-bar mat-stretch-tabs>
         <!-- Home -->

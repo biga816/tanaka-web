@@ -3,10 +3,12 @@ import { AppActions } from './app.actions';
 
 export interface IAppState {
   footer: boolean;
+  sidenav: boolean;
 }
 
 export const INITIAL_STATE: IAppState = {
-  footer: true
+  footer: true,
+  sidenav: false
 };
 
 /**
@@ -29,6 +31,18 @@ export function appReducer(state: IAppState = INITIAL_STATE, action: Action): IA
       return {
         ...state,
         footer: false
+      };
+    }
+    case AppActions.OPEN_SIDENAV: {
+      return {
+        ...state,
+        sidenav: true
+      };
+    }
+    case AppActions.CLOSE_SIDENAV: {
+      return {
+        ...state,
+        sidenav: false
       };
     }
   }
