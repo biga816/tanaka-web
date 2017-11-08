@@ -36,7 +36,7 @@
   position: relative;
 
   .date {
-    @extend .noto-thin;
+    @extend .noto;
     font-size: $sizeSm;
     line-height: $sizeXl;
     color: $gray;
@@ -45,6 +45,7 @@
 
   .post-title {
     @extend .noto;
+    font-weight: bold;
 
     font-size: $sizeMd;
     line-height: $sizeMd;

@@ -37,6 +37,7 @@
   .post-title {
     font-size: $sizeXl;
     padding-bottom: 12px;
+    font-weight: bold;
   }
 
 }
@@ -63,26 +64,9 @@
  * lt-md
  */
  @media screen and (max-width: 959px){
-  .dialog-inner {
-    transition: all 400ms;
-    transform: scale(0.95);
-    overflow: hidden;
-    border-radius: 8px;
-
-    .dialog-content {
-      background-color: white;
-    }
-
-    &.scrolled {
-      transform: scale(1);
-      border-radius: 0;
-    }
-  }
-  
-
   .close-button {
     bottom: 16px;
-    right: 8px;
+    right: 12px;
   }
 }
   

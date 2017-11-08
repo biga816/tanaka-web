@@ -27,11 +27,6 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 // fonts
 @font-face {
-  font-family: 'Noto';
-  src: url('./assets/fonts/NotoSansMonoCJKjp-Regular.otf') format('truetype');
-}
-
-@font-face {
   font-family: 'Noto-Thin';
   src: url('./assets/fonts/NotoSansCJKjp-Thin.otf') format('truetype');
 }
@@ -43,8 +38,7 @@ html {
 }
 
 body {
-  // font-family: 'Open Sans' ,sans-serif;
-  font-family: 'Noto';
+  font-family: 'Noto-Thin';
   font-weight: 200;
   line-height: 1.42857143;
   color: $baseColor;
@@ -152,7 +146,6 @@ header {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color: transparent;
     border-radius: 0;
   }
 }

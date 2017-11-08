@@ -10,7 +10,7 @@
   background-size: cover;
 
   &.slide2 {
-    background-image: url('/assets/img/top_bk2.png');
+    background-image: url('/assets/img/top_bk2.jpg');
   }
 
   .background {
@@ -35,7 +35,7 @@
       text-align: center;
 
       > a {
-        @extend .noto-thin;
+        @extend .noto;
         font-size: $sizeXXl;
       }
     }
