@@ -33,7 +33,7 @@ export class AppComponent {
   public isHome: boolean = true;
   public isOpen: boolean = false;
   public currentUrl: string;
-  public copyright: string = "©️2017-"+ new Date().getFullYear() + " Akihiro Tanaka";
+  public copyright: string = "©︎2017-"+ new Date().getFullYear() + " Akihiro Tanaka";
 
   /**
    * Creates an instance of AppComponent.
