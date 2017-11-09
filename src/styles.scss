@@ -28,7 +28,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // fonts
 @font-face {
   font-family: 'Noto-Thin';
-  src: url('./assets/fonts/NotoSansCJKjp-Thin.otf') format('truetype');
+  src: url('./assets/fonts/NotoSansCJKjp-Thin.woff') format('truetype');
 }
 
 
