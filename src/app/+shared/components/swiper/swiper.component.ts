@@ -78,8 +78,7 @@ export class SwiperContainer {
 @Injectable()
 @Component({
   selector: 'swiper-slide',
-  template: '<div><ng-content></ng-content></div>',
-  styleUrls: ['./swiper.component.scss']
+  template: '<div><ng-content></ng-content></div>'
 })
 export class SwiperSlide {
   private ele: HTMLElement;
