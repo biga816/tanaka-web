@@ -40,12 +40,10 @@
     font-size: $sizeSm;
     line-height: $sizeXl;
     color: $gray;
-    font-weight: 400;
   }
 
   .post-title {
     @extend .noto;
-    font-weight: bold;
 
     font-size: $sizeMd;
     line-height: $sizeLg;
@@ -95,6 +93,17 @@
   background-color: $liteGray;
   margin-left: -8px;
   opacity: 0.3;
+  position: relative;
+
+  > span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 18px;
+  }
 }
 
 .dummy-line {

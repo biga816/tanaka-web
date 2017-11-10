@@ -22,10 +22,13 @@
       class="post-item"
       *ngFor="let post of posts;"
       (click)="openDialog(post)">
-    <div class="main-img">
+    <div class="main-img" *ngIf="post.info?.media">
       <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.medium?.sourceUrl" [fxShow]="false" [fxShow.xs]="true" />
       <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.mediumLarge?.sourceUrl" [fxShow]="false" [fxShow.sm]="true" />
       <img [src]="post.info?.media[0]?.mediaDetails?.sizes?.large?.sourceUrl" [fxShow]="false" [fxShow.gt-sm]="true" />      
+    </div>
+    <div class="main-img" *ngIf="!post.info?.media">
+      <div class="dummy-image"><span>No Image</span></div>
     </div>
     <div class="description">
       <div class="date">{{ getDateFormat(post.date) }}</div>
