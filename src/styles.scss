@@ -55,8 +55,6 @@ main {
 
   &.active {
     > ng-component {
-      height: 100vh;
-
       &.ng-animating {
         width: calc(100vw - 240px);
       }
