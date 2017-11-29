@@ -142,6 +142,11 @@ header {
       word-break: break-all;
     }
   }
+
+  video {
+    max-width: 100%!important;
+    height: auto;
+  }
 }
 
 
