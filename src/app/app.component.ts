@@ -53,7 +53,7 @@ export class AppComponent {
     this.routerEventSub = this.router.events.subscribe(e => {
       if (e instanceof NavigationEnd) {
         this.currentUrl = "";
-        const currentUrl = e.url.slice(1);
+        const currentUrl = e.url.slice(1).replace(/\?.*$/,"");
 
         this.isHome = (currentUrl === 'home' || currentUrl === '');
         this.currentUrl = currentUrl;
