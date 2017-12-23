@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 // shared
 import { PostModel } from '../../+shared/models/post.model';
@@ -19,6 +19,7 @@ export class BlogDialogComponent {
   public targetLink: string;
   public post: PostModel;
   public isFullScreeem: boolean = false;
+  public content: SafeHtml;
 
   constructor(
     public dialogRef: MatDialogRef<BlogDialogComponent>,
@@ -26,6 +27,9 @@ export class BlogDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.post = this.data.post;
+    if (this.post && this.post.content) {
+      this.content = this.sanitizer.bypassSecurityTrustHtml(this.post.content.rendered);
+    }
   }
 
   close(): void {
