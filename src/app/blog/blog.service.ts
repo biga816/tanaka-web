@@ -26,13 +26,17 @@ export class BlogService {
       const url = id ? `${API.URL.POSTS}/${id}` : API.URL.POSTS;
       const params = {
         page,
-        per: API.SETTING.PER,
+        per_page: API.SETTING.PER,
         _embed: null
       };
 
       this.apiService.get(url, params).then(
         result => {
-          const rtn = MapperUtils.deserialize(PostModel, result);          
+          const rtn = {
+            totalPage: result.headers.get('X-WP-TotalPages'),
+            posts: MapperUtils.deserialize(PostModel, result.body),
+          };
+
           resolve(rtn);
         },
         err => reject(err)

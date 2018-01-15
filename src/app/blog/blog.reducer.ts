@@ -7,12 +7,22 @@ import { IPayloadAction } from '../+shared/utils/payload-action.types';
 
 export interface IBlogState {
   posts: PostModel[];
+  totalPage: number
 }
 
 export const INITIAL_STATE: IBlogState = {
-  posts: []
+  posts: [],
+  totalPage: null
 };
 
+/**
+ * 
+ * 
+ * @export
+ * @param {IBlogState} [state=INITIAL_STATE] 
+ * @param {IPayloadAction<any, any>} action 
+ * @returns {IBlogState} 
+ */
 export function blogReducer(state: IBlogState = INITIAL_STATE, action: IPayloadAction<any, any>): IBlogState {
   switch (action.type) {
     case BlogActions.FEATCH_POSTS_SUCCESS: {
@@ -20,7 +30,8 @@ export function blogReducer(state: IBlogState = INITIAL_STATE, action: IPayloadA
 
       return {
         ...state,
-        posts: action.meta.isRefresh ? posts : state.posts.concat(posts)
+        posts: action.meta.isRefresh ? posts : state.posts.concat(posts),
+        totalPage: action.meta.totalPage
       };
     }
   }

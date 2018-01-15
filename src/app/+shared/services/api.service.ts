@@ -48,7 +48,7 @@ export class ApiService {
 
     return new Promise((resolve, reject) => {
       let options = this.getOptions();
-      options = Object.assign(options, { params: httpParams });
+      options = Object.assign(options, { params: httpParams, observe: 'response' });
       this.httpClient.get(url, options)
         .subscribe(
           data => self.success(data, resolve),
@@ -70,7 +70,8 @@ export class ApiService {
     const self = this;
 
     return new Promise((resolve, reject) => {
-      const options = this.getOptions();
+      let options = this.getOptions();
+      options = Object.assign(options, { observe: 'response' });
       const bodyJson = JSON.stringify(body);
       this.httpClient.post(url, bodyJson, options)
         .subscribe(
@@ -93,7 +94,8 @@ export class ApiService {
     const self = this;
 
     return new Promise((resolve, reject) => {
-      const options = this.getOptions();
+      let options = this.getOptions();
+      options = Object.assign(options, { observe: 'response' });
       const bodyJson = JSON.stringify(body);
       this.httpClient.put(url, bodyJson, options)
         .subscribe(
@@ -116,7 +118,8 @@ export class ApiService {
     const self = this;
 
     return new Promise((resolve, reject) => {
-      const options = this.getOptions();
+      let options = this.getOptions();
+      options = Object.assign(options, { observe: 'response' });
       this.httpClient.delete(`${url}/${id}`, options)
         .subscribe(
           data => self.success(data, resolve),

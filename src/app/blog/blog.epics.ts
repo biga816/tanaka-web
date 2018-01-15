@@ -18,13 +18,13 @@ export class BlogEpics {
     private service: BlogService
   ) {}
 
-  @Epic() getStories = (action$: ActionsObservable<any>) => {
+  @Epic() getPosts = (action$: ActionsObservable<any>) => {
     return action$.ofType(BlogActions.FEATCH_POSTS)
       .mergeMap(({ payload, meta }: IPayloadAction<any, any>) => {
         return this.service.callPostsApi(payload.page, payload.id).then(
-          posts => ({
+          result => ({
               type: BlogActions.FEATCH_POSTS_SUCCESS,
-              meta: { posts, isRefresh: meta.isRefresh }
+              meta: { posts: result.posts, totalPage:result.totalPage, isRefresh: meta.isRefresh }
           }),
           err => {
             Observable.of({

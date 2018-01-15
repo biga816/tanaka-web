@@ -9,6 +9,7 @@ import { ScrollDirective } from './directives/scroll.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 
 // components
+import { ScrollComponent } from './components/scroll/scroll.component';
 import { SnsIconsComponent } from './components/sns-icons/sns-icons.component';
 import { SwiperContainer, SwiperSlide } from './components/swiper/swiper.component';
 
@@ -29,6 +30,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ScrollDirective,
     HighlightDirective,
     // components
+    ScrollComponent,
     SnsIconsComponent,
     SwiperContainer,
     SwiperSlide
@@ -73,6 +75,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ScrollDirective,
     HighlightDirective,
     // components
+    ScrollComponent,
     SnsIconsComponent,
     SwiperContainer,
     SwiperSlide
