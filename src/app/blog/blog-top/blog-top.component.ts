@@ -2,6 +2,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
+// redux
 import { NgRedux, select } from '@angular-redux/store';
 import { IBlogState } from '../blog.reducer';
 import { BlogActions } from '../blog.actions';

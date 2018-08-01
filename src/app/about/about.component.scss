@@ -20,3 +20,16 @@
   margin-top: 0;
   font-weight: inherit;
 }
+
+.dummy-line {
+  width: 100%;
+  height: $sizeMd;
+  background-color: $liteGray;
+  margin-bottom: 8px;
+  opacity: 0.3;
+
+  &.short {
+    width: 50%;
+    max-width: 160px;
+  }
+}

@@ -16,11 +16,13 @@ import { IAppState, rootReducer } from './app.store';
 
 // Epics
 import { BlogEpics } from './blog/blog.epics';
+import { AboutEpics } from "./about/about.epics";
 
 // modules
 import { SharedModule } from './+shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { BlogModule } from './blog/blog.module';
+import { AboutModule } from "./about/about.module";
 
 @NgModule({
   declarations: [
@@ -35,19 +37,23 @@ import { BlogModule } from './blog/blog.module';
     SharedModule,
     HomeModule,
     BlogModule,
+    AboutModule
   ],
   providers: [
-    BlogEpics
+    BlogEpics,
+    AboutEpics
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(
     private ngRedux: NgRedux<IAppState>,
-    private blogEpics: BlogEpics
+    private blogEpics: BlogEpics,
+    private aboutEpics: AboutEpics
   ) {
     const epics = [
       createEpics(blogEpics),
+      createEpics(aboutEpics),
     ];
     ngRedux.configureStore(rootReducer, {}, epics);
   }

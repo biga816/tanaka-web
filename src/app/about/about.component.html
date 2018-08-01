@@ -8,22 +8,26 @@
     <div class="sub-header">
         <img class="profile-image" src="./assets/img/me.jpg" alt="Akihiro Tanaka">
     </div>
-    <div>
-      <h1 class="title">Akihiro Tanaka</h1>
-      <h4 class="role">Engineer/UI Designer</h4>
-      <p>
-        UI設計を得意とするエンジニア。ハブリッドアプリやWEBアプリなどフロントエンド開発のスキルを中心に、
-        サーバーサイド開発やシステム運用、PM、オフショア/オンショアなどの経験を持つ。
-      </p>
-      <p>
-        得意な言語はTypeScript、Node.js。<br>
-        Java、PHP、Rubyなどの開発経験もあり。<br>
-        得意なフレームワークはIonic、Angular、Express。
-      </p>
-      <p>
-        好きなモノはハーレー、キャンプ、アンティーク。
-      </p>
+
+    <div *ngIf="!user">
+      <br>
+      <div class="dummy-line short"></div>
+      <div class="dummy-line short"></div>
+      <br>
+      <div class="dummy-line"></div>
+      <div class="dummy-line"></div>
+      <div class="dummy-line"></div>
+      <div class="dummy-line short"></div>
     </div>
-    <sns-icons></sns-icons>
+
+    <div [@listAnimation]="user">
+      <div *ngIf="user">
+        <h1 class="title">{{user?.name}}</h1>
+        <h4 class="role">Engineer/UI Designer</h4>
+        <p [innerHTML]="user?.description"></p>
+        <sns-icons></sns-icons>
+      </div>
+    </div>
+
   </div>  
 </div>

@@ -5,7 +5,8 @@ const BASE_URL = environment.wpUrl;
 
 export const API = {
   'URL': {
-    'POSTS': `${BASE_URL}posts`
+    'POSTS': `${BASE_URL}posts`,
+    'USERS': `${BASE_URL}users`
   },
   'SETTING': {
     'PER': 10
