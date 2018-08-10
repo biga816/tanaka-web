@@ -46,7 +46,7 @@ export class AboutComponent {
     this.ngRedux.dispatch(this.actions.featchUser(1));
 
     this.userSub = this.user$.subscribe((user: UserModel) => {
-      this.user = user;
+      setTimeout(() => this.user = user, 100);
     })
   }
 

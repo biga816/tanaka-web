@@ -67,9 +67,7 @@ export class BlogTopComponent implements OnInit {
 
       this.page = Math.ceil(posts.length / API.SETTING.PER);
 
-      setTimeout(() => {
-        this.posts = posts;
-      }, 100);
+      setTimeout(() => this.posts = posts, 100);
 
       this.scroll.complete();
     });
