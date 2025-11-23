@@ -1,72 +1,39 @@
 {
-  "name": "ng-universal-demo",
-  "version": "0.0.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/angular/universal-starter.git"
-  },
-  "contributors": [
-    "AngularClass <hello@angularclass.com>",
-    "PatrickJS <patrick@angularclass.com>",
-    "Jeff Whelpley <jeff@gethuman.com>",
-    "Jeff Cross <crossj@google.com>",
-    "Mark Pieszak <mpieszak84@gmail.com>",
-    "Jason Jean <jasonjean1993@gmail.com>",
-    "Fabian Wiles <fabian.wiles@gmail.com>"
-  ],
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
-    "build:static": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:static",
-    "build:dynamic": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "generate:static": "cd dist && node prerender",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:static": "cd dist/browser && http-server",
-    "serve:dynamic": "node dist/server"
-  },
+  "name": "tanaka-web",
+  "version": "1.0.0",
+  "description": "Website of the tanaka, by the tanaka, for the tanaka.",
   "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "@angular-redux/store": "^6.5.7",
-    "@angular/animations": "^4.4.6",
-    "@angular/cdk": "^2.0.0-beta.12",
-    "@angular/common": "^4.2.4",
-    "@angular/compiler": "^4.2.4",
-    "@angular/core": "^4.2.4",
-    "@angular/flex-layout": "^2.0.0-beta.9",
-    "@angular/forms": "^4.2.4",
-    "@angular/http": "^4.2.4",
-    "@angular/material": "^2.0.0-beta.12",
-    "@angular/platform-browser": "^4.2.4",
-    "@angular/platform-browser-dynamic": "^4.2.4",
-    "@angular/platform-server": "^4.3.6",
-    "@angular/router": "^4.2.4",
-    "@nguniversal/express-engine": "^1.0.0-beta.3",
-    "@nguniversal/module-map-ngfactory-loader": "^1.0.0-beta.3",
-    "core-js": "^2.4.1",
-    "date-fns": "^1.29.0",
-    "font-awesome": "^4.7.0",
-    "hammerjs": "^2.0.8",
-    "highlight.js": "^9.12.0",
-    "redux": "^3.7.2",
-    "redux-observable": "^0.14.1",
-    "redux-observable-decorator": "^1.1.0",
-    "rxjs": "^5.4.2",
-    "swiper": "^4.0.5",
-    "web-animations-js": "^2.3.1",
-    "zone.js": "^0.8.14"
+    "next": "^15.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@angular/cli": "^1.5.0",
-    "@angular/compiler-cli": "^4.2.4",
-    "@angular/language-service": "^4.2.4",
-    "@types/node": "^8.0.30",
-    "cpy-cli": "^1.0.1",
-    "http-server": "^0.10.0",
-    "reflect-metadata": "^0.1.10",
-    "ts-loader": "^2.3.7",
-    "typescript": "~2.3.3"
-  }
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biga816/tanaka-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biga816/tanaka-web/issues"
+  },
+  "homepage": "https://github.com/biga816/tanaka-web#readme"
 }
