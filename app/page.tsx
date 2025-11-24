@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaBlog, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -11,8 +11,8 @@ export default function Home() {
         <Image
           src="/logo-white.png"
           alt="Logo"
-          width={300}
-          height={300}
+          width={240}
+          height={240}
           priority
         />
 
@@ -39,9 +39,10 @@ export default function Home() {
             href="https://blog.tanakas.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-white text-[#0881a3] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-3 bg-white text-[#0881a3] rounded-full hover:bg-gray-100 transition-colors"
+            aria-label="Blog"
           >
-            Blog
+            <FaBlog size={28} />
           </a>
         </div>
       </div>
